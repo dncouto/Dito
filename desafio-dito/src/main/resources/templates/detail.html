@@ -1,0 +1,54 @@
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+           <title>Detalhes do Produto</title>  
+           
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           
+           <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+           
+           <style>  
+	           li{  
+	                cursor:pointer;  
+	           }  
+	           li:hover  
+	           {  
+	                background-color:#f9f9f9;  
+	           } 
+	           .lineBottom {
+	           		border-bottom: solid 1px; 
+	           		margin-bottom: 20px;
+	           }
+           </style>  
+      </head>  
+      <body>  
+			<br/>
+			<br/>  
+
+		   	<div class="col-sm-12 form-group">
+		   		<div class="col-sm-2 form-group"><a href="../browser">Volta para lista</a></div>
+		   		<div class="col-sm-8 form-group">
+			   		<h3 align="center">Detalhes do Produto</h3> 
+			   		<br/>
+			   		<hr/>
+			   		<br/>
+					<div class="box-body no-padding">
+						<div class="row lineBottom">
+				        	<div class="col-sm-3 form-group" style="font-size: large;">C&oacute;digo:</div>
+				        	<div class="col-sm-5 form-group" th:text="${productId}"></div>
+				        </div>
+						<div class="row lineBottom">
+				        	<div class="col-sm-3 form-group" style="font-size: large;">Descri&ccedil;&atilde;o:</div>
+				        	<div class="col-sm-5 form-group" th:text="${description}"></div>
+				        </div>
+				        <div class="row lineBottom">
+				        	<div class="col-sm-3 form-group" style="font-size: large;">Pre&ccedil;o:</div>
+				        	<div class="col-sm-5 form-group" th:text="${price}">{{ product.price | currency:'R$ ':2 }}</div>
+				        </div>
+				    </div>
+				</div>
+				<div class="col-sm-2 form-group"></div>
+			</div>
+		    
+      </body>  
+ </html>  

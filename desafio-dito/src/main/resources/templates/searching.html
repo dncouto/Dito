@@ -1,0 +1,41 @@
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+           <title>Pesquisa Favoritos</title>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+           <script src="/js/services/ftHttp.js"></script>
+           <script src="/js/controllers/searching.js"></script>  
+           <style>  
+	           li{  
+	                cursor:pointer;  
+	           }  
+	           li:hover  
+	           {  
+	                background-color:#f9f9f9;  
+	           }  
+           </style>  
+      </head>  
+      <body>  
+           <br/><br/>
+           <div class="col-sm-12 form-group"><a href="../browser">Volta para lista</a></div>  
+           <div class="container" style="width:500px;">  
+                <h3 align="center">&#x1F50E; Pesquisa &Uacute;ltimos Vistos</h3>  
+                <div ng-app="app" ng-controller="searchingController">  
+                     <br/>
+                     <div class="row">
+                     	<div class="col-sm-9 form-group">  
+	                    	<input type="text" name="searching" id="searching" ng-model="searching" ng-change="complete(searching)" class="form-control" autofocus />
+	                    	<ul class="list-group" ng-model="hidethis" ng-hide="hidethis">  
+		                    	<li class="list-group-item" ng-repeat="event in filterEvents" ng-click="fillTextbox(event)">{{event.eventName}}</li>  
+		                    </ul>
+	                    </div>
+	                    <div class="col-sm-3 form-group"> 
+	                    	<button style="width: 100%;" class="form-control btn-primary" ng-click="openURL(selectedEvent)">Abrir</button>
+	                    </div>
+	                    
+                     </div>
+                </div>  
+           </div>  
+      </body>  
+ </html>  
